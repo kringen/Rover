@@ -1,5 +1,6 @@
 import serial
 from pynmea import nmea
+import Com
 
 ser = serial.Serial('/dev/ttyAMA0',9600)
 gpgga = nmea.GPGGA()
@@ -19,4 +20,5 @@ def getCoords():
      return coords
 
 if __name__ == '__main__':
-     print(getCoords())
+     coords = getCoords()
+     print(coords)
